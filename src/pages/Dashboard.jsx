@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import "../index.css";
 
-// 🔥 Firebase
+
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase";
 
@@ -26,7 +26,7 @@ function Dashboard() {
 
   // 📡 Fetch Cartoons
   useEffect(() => {
-    fetch("http://localhost:3002/api/cartoons")
+    fetch(`https://mern-final-project-onqx.onrender.com/api/cartoons`)
       .then((res) => res.json())
       .then((data) => {
         if (!birthYear || isNaN(birthYear)) {
@@ -43,10 +43,10 @@ function Dashboard() {
       .catch((err) => console.error(err));
   }, [birthYear]);
 
-  // ⭐ FAVORITES FUNCTION
+  
   const toggleFavorite = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3002/favorites/${id}`, {
+      const res = await fetch(`https://mern-final-project-onqx.onrender.com/favorites/${id}`, {
         method: "POST",
       });
 
@@ -104,7 +104,7 @@ function Dashboard() {
               {/* ❤️ FAVORITE BUTTON */}
               <button
                 onClick={() => toggleFavorite(show.id)}
-                className="bg-red-500 text-white px-3 py-1 rounded mt-2"
+                // className="bg-red-500 text-white px-3 py-1 rounded mt-2"
               >
                 ❤️ Favorite
               </button>

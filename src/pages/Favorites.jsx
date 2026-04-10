@@ -4,7 +4,7 @@ function Favorites() {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3002/favorites")
+    fetch(`https://mern-final-project-onqx.onrender.com/favorites`)
       .then((res) => res.json())
       .then((data) => setFavorites(data));
   }, []);

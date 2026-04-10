@@ -20,7 +20,7 @@ function Login() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       toast.success("Login successful 🎉");
-      setTimeout(() => navigate("/landing"), 1500); // navigate after toast shows
+      setTimeout(() => navigate("/landing"), 1500); 
     } catch (error) {
       toast.error(error.message);
     }
@@ -47,14 +47,13 @@ function Login() {
 
         <button onClick={handleLogin}>Login</button>
 
-        {/* Add spacing between button and link */}
+        
         <p className="new-user">
           New user? <Link to="/signup">Signup</Link>
         </p>
       </div>
 
-      {/* Toast container */}
-      <ToastContainer position="top-center" autoClose={2000} />
+           <ToastContainer position="top-center" autoClose={2000} />
     </div>
   );
 }

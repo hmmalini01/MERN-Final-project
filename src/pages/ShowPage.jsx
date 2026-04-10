@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./index.css";
-import bgImage from "./assets/showpage.webp";
+import "../index.css";
+
 
 function ShowPage() {
   const { id } = useParams();
